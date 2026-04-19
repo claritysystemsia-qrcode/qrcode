@@ -39,7 +39,7 @@
     justify-content: center;
     font-family: var(--font);
     -webkit-font-smoothing: antialiased;
-    padding: 0;
+    padding: 0 12px;
     margin: 0;
   }
 
@@ -71,13 +71,13 @@
     background: var(--surface);
     width: 100%;
     max-width: 480px;
-    height: 100vh;
-    border-radius: 0;
+    height: calc(100vh - 32px);
+    border-radius: var(--radius-xl);
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-card);
     overflow: hidden;
-    border: none;
+    border: 1px solid var(--border);
   }
 
   @media (min-width: 520px) {
@@ -85,8 +85,6 @@
     #chat-container {
       height: 92vh;
       max-height: 860px;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
     }
   }
 
@@ -109,7 +107,7 @@
   }
 
   .logo {
-    height: 80px;
+    height: 96px;
     width: auto;
     display: block;
   }
@@ -282,7 +280,7 @@
     border: none;
     background: transparent;
     font-family: var(--font);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--text);
     padding: 13px 0;
