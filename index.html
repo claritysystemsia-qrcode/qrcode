@@ -456,10 +456,14 @@
     });
   }
 
-  // Enter to send
-  inputEl.addEventListener("keydown", e => {
-    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
-  });
+  // Enter envoie uniquement sur desktop (pas sur mobile/tablette)
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+  if (!isMobile) {
+    inputEl.addEventListener("keydown", e => {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+    });
+  }
 </script>
 
 </body>
